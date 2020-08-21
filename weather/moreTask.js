@@ -13,16 +13,16 @@ var results = [];
 
 // 位置坐标
 var locations = { 
-    '公司' : '116.2442,40.0134',
-    '半截塔' : '116.2316,40.0507'
+    'company': '116.2442,40.0134',
+    'home': '116.2316,40.0507'
 }
 
 async function init() {
     await Promise.all([
-        await getWeather(weather, locations['公司']),
-        await getWeather(weather, locations['半截塔']),
-        await getWeather(realtime, locations['公司']),
-        await getWeather(realtime, locations['半截塔']),
+        await getWeather(weather, locations['company']),
+        await getWeather(weather, locations['home']),
+        await getWeather(realtime, locations['company']),
+        await getWeather(realtime, locations['home']),
     ])
     await notify();
 }
